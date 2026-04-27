@@ -30,7 +30,16 @@ Traditional impossible travel detections often suffer from high false positive r
 This project explores a more structured approach that separates ingestion, enrichment, and detection logic into distinct stages.
 
 ---
+## Proof of Concept Scope
 
+This project is intended as a proof of concept and not a production-ready detection.
+
+The focus is on demonstrating:
+- ingestion and normalization workflows
+- stateful enrichment using transforms
+- realistic travel-based detection logic
+- reduction of false positives through contextual analysis
+---
 ## Architecture
 
 The detection pipeline is composed of multiple stages:
