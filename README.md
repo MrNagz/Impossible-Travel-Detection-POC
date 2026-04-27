@@ -41,9 +41,8 @@ The focus is on demonstrating:
 - reduction of false positives through contextual analysis
 ---
 ## Architecture
-
+```mermaid
 flowchart LR
-
     A[SSH Auth Logs<br/>system.auth] --> B[Default Pipeline<br/>logs-system.auth-2.6.3]
     B --> C[Custom Pipeline<br/>logs-system.auth@custom]
     C --> D[GeoIP Normalize Pipeline<br/>auth_geoip_normalize]
@@ -62,7 +61,7 @@ flowchart LR
 
     J --> K[Detection Rules]
     K --> L[Alerts / Dashboard]
-    
+```
 The detection pipeline is composed of multiple stages:
 
 ### 1. Log Ingestion
