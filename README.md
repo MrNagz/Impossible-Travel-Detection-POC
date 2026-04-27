@@ -61,7 +61,7 @@ flowchart LR
 
     J --> K[Detection Rules]
     K --> L[Alerts / Dashboard]
-
+    
 The detection pipeline is composed of multiple stages:
 
 ### 1. Log Ingestion
