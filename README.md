@@ -43,6 +43,7 @@ The focus is on demonstrating:
 ## Architecture
 
 flowchart LR
+
     A[SSH Auth Logs<br/>system.auth] --> B[Default Pipeline<br/>logs-system.auth-2.6.3]
     B --> C[Custom Pipeline<br/>logs-system.auth@custom]
     C --> D[GeoIP Normalize Pipeline<br/>auth_geoip_normalize]
