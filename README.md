@@ -42,6 +42,26 @@ The focus is on demonstrating:
 ---
 ## Architecture
 
+flowchart LR
+    A[SSH Auth Logs<br/>system.auth] --> B[Default Pipeline<br/>logs-system.auth-2.6.3]
+    B --> C[Custom Pipeline<br/>logs-system.auth@custom]
+    C --> D[GeoIP Normalize Pipeline<br/>auth_geoip_normalize]
+
+    D --> E[Indexed Logs<br/>logs-system.auth-*]
+
+    E --> F[Transform<br/>auth_latest_by_user]
+    F --> G[Latest Login Index<br/>auth_latest_by_user]
+
+    G --> H[Enrich Policy<br/>auth_latest_by_user_policy]
+
+    E --> I[Travel Pipeline<br/>impossible_travel_enrich]
+    H --> I
+
+    I --> J[Enriched Events<br/>travel.* fields]
+
+    J --> K[Detection Rules]
+    K --> L[Alerts / Dashboard]
+
 The detection pipeline is composed of multiple stages:
 
 ### 1. Log Ingestion
